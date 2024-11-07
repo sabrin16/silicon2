@@ -6,7 +6,7 @@ import Faq from '../components/Faq'
 import Testimonials from '../components/Testimonials'
 import Recieve from '../components/Recieve'
 import MakeMoney from '../components/MakeMoney'
-import CarsouselSection from '../components/CarsouselSection'
+import CarouselSection from '../components/CarouselSection'
 import Features from '../components/Features'
 import Logos from '../components/Logos'
 import Showcase from '../components/Showcase'
@@ -25,7 +25,7 @@ const Home = () => {
        <Showcase />
        <Logos />
        <Features />
-       <CarsouselSection />
+       <CarouselSection />
        <MakeMoney />
        <Recieve />
        <Testimonials />

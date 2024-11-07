@@ -4,6 +4,7 @@ import './components/DarkModeToggle'
 import Home from './views/Home'
 import About from './views/About'
 import Projects from './views/Projects'
+import Features from './components/Features'
 
 import MobileButton from './components/MobileButton'
 import Header from './components/Header'
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/features" element={<Features />} />
           </Routes>
         </main>
         <Footer />

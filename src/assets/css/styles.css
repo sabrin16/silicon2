@@ -672,3 +672,42 @@ o1, u1 {
     opacity: 0;
   }
 }
+
+/* Spinner Styles */
+.spinner {
+  border: 4px solid var(--clr-gray-300);  /* Light gray border */
+  border-top: 4px solid var(--clr-primary); /* Primary color */
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: spin 1s linear infinite;
+  margin: auto; /* Center the spinner */
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loading container styling */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.dropdown-toggle {
+  transition: transform 0.3s ease;
+}
+
+.rotated {
+  transform: rotate(180deg); /* Rotera ikonen när den är öppen */
+}

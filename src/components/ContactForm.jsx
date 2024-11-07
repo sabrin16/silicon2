@@ -4,22 +4,39 @@ import { useForm } from 'react-hook-form'
 
 const ContactForm = () => {
     const [submitted, setSubmitted] = useState(false)
+    const [errorMessage, setErrorMessage] = useState(null)
+    const [loading, setLoading] = useState(false)
     const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
     const handleOK = () => {
-        setSubmitted(false)
+        setSubmitted(false);
         reset()
-    }
+    };
 
     const onSubmit = async (data) => {
+        setLoading(true);
+
+        try {
         const res = await axios.post('http://localhost:5173/api/contactform', data)
 
         if (res.status === 200) {
-            setSubmitted(true)
-            reset()
+            setSubmitted(true);
+            reset();
         }
+    } catch (error) {
+        console.error(error);
+        setErrorMessage(
+            error.response?.status === 400
+            ? "Felaktig data, vänligen kontrollera dina inmatningar."
+            : error.response?.data?.message 
+            || error.message 
+            || "Något gick fel, försök igen senare."
+        ); 
+    } finally {
+        setLoading(false);
     }
 
+    };
 
     if (submitted) {
         return (
@@ -52,10 +69,21 @@ const ContactForm = () => {
                     <span>{errors.message && errors.message.message}</span>
                 </div>
 
-                <button type="submit">SUBMIT</button>
+                {loading && (
+                <div className="loading-container">
+                  <p>Laddar...</p>
+                  <div className="spinner"></div>
+                </div>
+                )}
+
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+                <button type="submit" disabled={loading} aria-label={loading ? 'Sending your message' : 'Submit your message'}>
+                  {loading ? 'Sending...' : 'SUBMIT'}
+                </button>
             </div>
         </form>
-        )
-        }
+        );
+        };
 
         export default ContactForm

@@ -1,13 +1,36 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import phone from '../assets/images/icons/phone.svg'
 import message from '../assets/images/icons/message.svg'
-import chevron1 from '../assets/images/icons/message.svg'
-import chevron2 from '../assets/images/icons/message.svg'
-import chevron3 from '../assets/images/icons/message.svg'
-import chevron4 from '../assets/images/icons/message.svg'
-import chevron5 from '../assets/images/icons/message.svg'
+import chevron from '../assets/images/icons/chevron-down.svg'
 
 const Faq = () => {
+
+  const [faqItems, setFaqItems] = useState([]);
+  const [openIndex, setOpenIndex] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null); 
+
+  useEffect(() => {
+    fetch('https://win24-assignment.azurewebsites.net/api/faq')
+      .then(response => response.json())
+      .then(data => {
+        setFaqItems(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        setError("Det gick inte att hämta FAQ-data.");
+        setLoading(false);
+      });
+  }, []); 
+
+  const toggleOpen = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  if (loading) return <p>Laddar FAQ...</p>;
+  if (error) return <p>{error}</p>;
+
+
   return (
     <section className="faq-section">
     <div className="faq-info">
@@ -32,61 +55,37 @@ const Faq = () => {
     <div className="faq-list">
         <div className="accordion-body">
             <div className="accordion">
-              <div className="container">
-                <div className="accordion-info">
-                <h4 className="label">Is any of my personal information stored in the App?</h4>
-                <div className="faq-dropdownTab-down">
-                    <img className="dropdown-toggle" width="20" height="20" src={chevron1} alt="dropdownTab" />    
-               </div>
+            {faqItems.map((item, index) => (
+            <div key={index} className="container">
+              <div className="accordion-info">
+                <h4 className="label">{item.question}</h4>
+                <div
+                  className="faq-dropdownTab-down"
+                  onClick={() => toggleOpen(index)}
+                >
+                  <img
+                    className="dropdown-toggle"
+                    width="20"
+                    height="20"
+                    src={chevron}
+                    alt="dropdown toggle"
+                    style={{
+                      transform: openIndex === index ? 'rotate(180deg)' : 'rotate(0deg)',
+                      transition: 'transform 0.3s',
+                    }}
+                  />
+                </div>
+              </div>
+              {openIndex === index && (
+                <div className="content">{item.answer}</div> 
+              )}
             </div>
-                <div className="content">Hypertext Markup Language (HTML) is a computer language that makes up most web pages and online applications. A hypertext is a text that is used to reference other pieces of text, while a markup language is a series of markings that tells web servers the style and structure of a document. HTML is very simple to learn and use.</div>
-              </div>
-              <div className="container">
-                <div className="accordion-info">
-                <h4 className="label">Is any of my personal information stored in the App?</h4>
-                <div className="faq-dropdownTab-down">
-                    <img width="20" height="20" src={chevron2} alt="dropdownTab" />
-
-               </div>                </div>
-                <div className="content">Hypertext Markup Language (HTML) is a computer language that makes up most web pages and online applications. A hypertext is a text that is used to reference other pieces of text, while a markup language is a series of markings that tells web servers the style and structure of a document. HTML is very simple to learn and use.</div>
-              </div>
-              <div className="container">
-                <div className="accordion-info">
-                <h4 className="label">Is any of my personal information stored in the App?</h4>
-                <div className="faq-dropdownTab-down">
-                    <img width="20" height="20" src={chevron3} alt="dropdownTab" />
-                   
-                   
-               </div>                </div>
-                <div className="content">Hypertext Markup Language (HTML) is a computer language that makes up most web pages and online applications. A hypertext is a text that is used to reference other pieces of text, while a markup language is a series of markings that tells web servers the style and structure of a document. HTML is very simple to learn and use.</div>
-              </div>
-              <div className="container">
-                <div className="accordion-info">
-                <h4 className="label">Is any of my personal information stored in the App?</h4>
-                <div className="faq-dropdownTab-down">
-                    <img width="20" height="20" src={chevron4} alt="dropdownTab" />
-                   
-               </div>               
-             </div>
-                <div className="content">Hypertext Markup Language (HTML) is a computer language that makes up most web pages and online applications. A hypertext is a text that is used to reference other pieces of text, while a markup language is a series of markings that tells web servers the style and structure of a document. HTML is very simple to learn and use.</div>
-              </div>
-              <div className="container">
-                <div className="accordion-info">
-                <h4 className="label">Is any of my personal information stored in the App?</h4>
-                <div className="faq-dropdownTab-down">
-                    <img width="20" height="20" src={chevron5} alt="dropdownTab" />
-                   
-                   
-               </div>               
-             </div>
-                <div className="content">Hypertext Markup Language (HTML) is a computer language that makes up most web pages and online applications. A hypertext is a text that is used to reference other pieces of text, while a markup language is a series of markings that tells web servers the style and structure of a document. HTML is very simple to learn and use.</div>
-              </div>
-             
-            </div>
-            </div>
+          ))}    
+        </div>
+      </div>
     </div>
 </section>
-  )
-}
+  );
+};
 
 export default Faq
