@@ -26,21 +26,22 @@
   --br-m: 0.375em;
   --br-l: 0.5em;
   --section-spacing: 4rem;
---section-spacing: 4rem;
+  --section-spacing: 4rem;
 }
 
 
 .dark {
-  --clr-bg: var(--clr-gray-900);
+    --clr-bg: var(--clr-gray-900);
     --clr-bg-100: rgba(255, 255, 255, 0.04);
-    --clr-text-body: var(255, 255, 255, 0.7);
+    --clr-text-body: rgba(255, 255, 255, 0.7);
     --clr-text-heading: #ffffff;
     --clr-navigation-text: #ffffff;
     --clr-logo-bg: rgba(99, 101, 241, 0.08);
-    --white-to-gray: var(255, 255, 255, 0.5);
+    --white-to-gray: rgba(255, 255, 255, 0.5);
     --clr-market-btn: var(--clr-gray-100);
     color-scheme: dark;
 
+    color-scheme: dark; /* Ställer in att sidan ska vara i mörkt läge */
 
     .show-light {display: none;}
     .show-dark{display: block;}
@@ -64,6 +65,24 @@ body {
     line-height: 1.8;
     --background-color: var(--clr-bg);
     color: var(--clr-text-body);
+}
+
+a {
+  color: var(--clr-text-heading); /* Länkar färg */
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--clr-primary); /* Färg på länkar vid hover */
+}
+
+.btn-primary {
+  background-color: var(--clr-primary);
+  color: #fff; /* Text på knapp */
+}
+
+.btn-primary:hover {
+  background-color: var(--clr-primary-dark); /* Mörkare bakgrund på hover */
 }
 
 img {
@@ -430,6 +449,7 @@ o1, u1 {
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      justify-content: center;
 
   }
   .store-btn {
@@ -455,7 +475,7 @@ o1, u1 {
   
 
 
-  @media (width > 768px){
+  @media (min-width: 768px) {
       .container{
           position: relative;
       }
@@ -485,7 +505,7 @@ o1, u1 {
       }
   }
 
-  @media (width > 992px){
+  @media (min-width: 992px) {
       .store-btn{
           padding: .3em 2em;
       }
@@ -494,7 +514,7 @@ o1, u1 {
           margin-top: 11rem;
       }
   }
-  @media (width > 1200px){
+  @media (min-width: 1200px) {
       padding-top: 10rem;
       text-align: start;
 
@@ -511,13 +531,11 @@ o1, u1 {
       }
   }
 
-  @media (width > 1400px){
+  @media (min-width: 1400px) {
       padding-top: 10rem;
       .more{
           margin-top: 15rem;
       }
-
-
   }
 }
 /* SHOWCASE END */
@@ -710,4 +728,62 @@ o1, u1 {
 
 .rotated {
   transform: rotate(180deg); /* Rotera ikonen när den är öppen */
+}
+
+.status-message {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  transition: opacity 0.3s ease; /* Mjuk övergång för opacity */
+  opacity: 0;  /* Startar med osynlig */
+}
+
+/* Gör meddelandet synligt när det visas */
+.status-message.show {
+  opacity: 1;
+}
+
+/* Framgångsmeddelande - Grön bakgrund och text */
+.status-message.success {
+  background-color: #d4edda; /* Grön bakgrund */
+  color: #155724;            /* Mörkgrön text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lätt skugga för att få det att poppa */
+}
+
+/* Felmeddelande - Röd bakgrund och text */
+.status-message.error {
+  background-color: #f8d7da; /* Röd bakgrund */
+  color: #721c24;             /* Mörkröd text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lätt skugga för att få det att poppa */
+}
+
+.socialmedia {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.socialmedia a {
+  font-size: 24px;
+  color: #000; /* Standard färg */
+  transition: color 0.3s ease;
+}
+
+.socialmedia a:hover {
+  color: #0073e6; /* Färgen ändras vid hover */
+}
+
+.social-icon.facebook {
+  color: #3b5998; /* Facebook-blå */
+}
+
+.social-icon.twitter {
+  color: #00acee; /* Twitter-blå */
+}
+
+.social-icon.linkedin {
+  color: #0e76a8; /* LinkedIn-blå */
 }

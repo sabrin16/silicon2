@@ -14,16 +14,22 @@ const Showcase = () => {
            <p className="text-lg">We offer you a new generation of the mobile banking. 
              Save, spend & manage money in your pocket.</p>
            <div className="market-btns">
-            <a href="#" className="store-btn">
+            <a 
+            href="#"
+              className="store-btn"
+              aria-label="Download on the App Store">
               <span className="sr-only">Download on the App Store</span>
-              <img className="show-light" src={light1} alt="" />
-              <img className="show-dark" src={dark2} alt="" />
+              <img className="show-light" src={light1} alt="App Store logo" />
+              <img className="show-dark" src={dark2} alt="App Store logo" />
             </a>
 
-            <a href="#" className="store-btn">
+            <a
+              href="#"
+              className="store-btn"
+              aria-label="Get it on Google Play">
               <span className="sr-only">Get it on Google Play</span>
-              <img className="show-light" src={light3} alt="" />
-              <img className="show-dark" src={dark4} alt="" />
+              <img className="show-light" src={light3} alt="Google Play logo" />
+              <img className="show-dark" src={dark4} alt="Google Play logo" />
             </a>
            </div>
 
