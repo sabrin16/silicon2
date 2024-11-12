@@ -2,6 +2,7 @@ import React from 'react';
 
 const SocialMediaLinks = () => {
   return (
+
       <div className="socialmedia">
         <a 
           target="_blank" 

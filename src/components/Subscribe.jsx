@@ -71,7 +71,6 @@ const Subscribe = () => {
         <img src={notification} alt="notification" />
         <h4 id="subscribe-title">Subscribe to our newsletter to stay informed about latest updates</h4>
         <form onSubmit={handleSubmit}>
-            
             <input type="email" placeholder="Your Email" value={email} onChange={handleEmailChange} required />
             <button type="submit">Subscribe</button>
         </form>

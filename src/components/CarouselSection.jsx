@@ -10,24 +10,21 @@ const CarouselSection = () => {
       <h2 className="h1">How Does It Work?</h2>
 
       <div className="carousel">
-       <div className="carousel-item">
-           <img src={iphoneLeft} alt="" />
-       </div>
-       <div className="carousel-item">
-           <img src={iphone} alt="" />
-       </div>
-       <div className="carousel-item">
-           <img src={iphoneright} alt="" />
-       </div>
-       </div>
-     
-     
-     
+        <div className="carousel-item">
+             <img src={iphoneLeft} alt="iPhone 12 Pro left view" />
+        </div>
+        <div className="carousel-item">
+             <img src={iphone} alt="iPhone 12 Pro front view" />
+        </div>
+        <div className="carousel-item">
+             <img src={iphoneright} alt="iPhone 12 Pro right view" />
+        </div>
+      </div>
       
-     <div className="text">
-        <h3 className="h4">Latest transaction history</h3>
-        <p>Enim, et amet praesent pharetra. Mi non ante hendrerit amet sed. Arcu sociis tristique quisque hac in consectetur condimentum.</p>
-     </div>
+      <div className="text">
+          <h3 className="h4">Latest transaction history</h3>
+          <p>Enim, et amet praesent pharetra. Mi non ante hendrerit amet sed. Arcu sociis tristique quisque hac in consectetur condimentum.</p>
+      </div>
     </div>
    </section>
   )

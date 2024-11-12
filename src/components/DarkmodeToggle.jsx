@@ -59,7 +59,6 @@ const DarkModeToggle = () => {
       document.documentElement.classList.remove('dark'); // Ta bort mörk tema
       localStorage.setItem('darkMode', 'off'); // Spara temat i localStorage
     }
-
     setIsDarkMode(isChecked); // Uppdatera tillståndet
   };
 
