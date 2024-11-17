@@ -16,18 +16,27 @@ const SocialMediaLinks = () => {
           target="_blank" 
           rel="noopener noreferrer" 
           href="https://x.com/silicon2" 
-          className="social-icon twitter" 
-          aria-label="Follow us on Twitter">
-          <i className="fa-brands fa-x-twitter"></i>
+          className="social-icon twitter"           aria-label="Follow us on Twitter">
+          <i className="fa-brands fa-twitter"></i>
         </a>
         <a 
           target="_blank" 
           rel="noopener noreferrer" 
-          href="https://linkedin.com/silicon2" 
-          className="social-icon linkedin" 
-          aria-label="Follow us on LinkedIn">
-          <i className="fa-brands fa-linkedin-in"></i>
+          href="https://instagram.com/silicon2" 
+          className="social-icon instagram" 
+          aria-label="Follow us on Instagram">
+          <i className="fa-brands fa-instagram"></i>
         </a>
+        <a 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          href="https://youtube.com/silicon2" 
+          className="social-icon youtube" 
+          aria-label="Follow us on Youtube">
+          <i className="fa-brands fa-youtube"></i>
+        </a>
+        
+        
       </div>
   )
 }

@@ -76,6 +76,11 @@ const Nav = () => {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/contact" className="nav-link">
+              Contact
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/sign-in" className="btn btn-primary">
               <img src={user} alt="sign-in or sign-up icon" />
               <span>sign in / up</span>
