@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import quotes from "../assets/images/icons/quotes.svg";
 import rating from "../assets/images/icons/rating.svg";
-import designerPic from "../assets/images/icons/designerPic.svg";
-import quotes1 from "../assets/images/icons/quotes1.svg";
-import rating5 from "../assets/images/icons/rating5.svg";
-import developerPic from "../assets/images/icons/developerPic.svg";
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);

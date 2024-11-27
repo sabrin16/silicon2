@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./assets/css/styles.css";
 import "./components/DarkModeToggle";
-import About from "./views/About";
 import Projects from "./views/Projects";
 import Features from "./components/Features";
 import Contact from "./components/Contact";
