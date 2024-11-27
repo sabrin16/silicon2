@@ -1037,28 +1037,39 @@ justify-content: space-between;
   margin-bottom: 10px;
 }
 
+.accordion .container.active .faq-dropdownTab-down {
+  background-color: var(--clr-primary);
+}
+.faq-dropdownTab-down img {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+
 .faq-dropdownTab-down {
-background-color: var(--clr-logo-bg);
-display: inline-block;
-width: 36px;
-height: 36px;
-border-radius: 50%;
-text-align: center;
-align-items: center;
-align-content: center;
+  background-color: #F3F6FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: solid 2px var(--clr-bg-100);
 }
 
 .faq-dropdownTab-up {
-background-color: var(--clr-primary);
-display: inline-block;
-width: 36px;
-height: 36px;
-border-radius: 50%;
-text-align: center;
-align-items: center;
-align-content: center;
+  background-color: var(--clr-primary);
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
 }
-
+  
 
 .subscribe {
   position: relative;
@@ -1699,37 +1710,7 @@ button.learn-more img {
   margin-bottom: 10px;
 }
 
-.faq-dropdownTab-down {
-  background-color: var(--clr-text-heading);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border: solid 1px white;
-}
-.accordion .container.active .faq-dropdownTab-down {
-  background-color: var(--clr-primary);
-}
 
-.faq-dropdownTab-down img {
-  max-width: 20px;
-  max-height: 20px;
-}
-
-.faq-dropdownTab-up {
-  background-color: var(--clr-primary);
-  display: inline-block;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  text-align: center;
-  align-items: center;
-  align-content: center;
-}
 
 .subscribe {
   position: relative;
