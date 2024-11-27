@@ -13,7 +13,7 @@ import MobileButton from "./components/MobileButton";
 function App() {
   return (
     <BrowserRouter>
-      <MobileButton />
+      {/* <MobileButton /> */}
       <div className="wrapper">
         <main>
           <Routes>

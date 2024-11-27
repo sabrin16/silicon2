@@ -31,9 +31,9 @@ const Nav = () => {
         skip to main content
       </NavLink>
 
-      <NavLink className="nav-link" to="/About">
+      {/* <NavLink className="nav-link" to="/About">
         About
-      </NavLink>
+      </NavLink> */}
 
       <div className="container">
         <NavLink to="/">
